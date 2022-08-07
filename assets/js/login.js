@@ -32,8 +32,9 @@ $(function () {
     e.preventDefault()
     $.post("/api/reguser", { username: $('#form_reg [name=username]').val(), password: $('#form_reg [name=password]').val() },
       function (res) {
-        if (res.status !== 0) return console.log(res.message)
-        console.log('注册成功!')
+        if (res.status !== 0) return layer.msg(res.message)
+        layer.msg('注册成功!')
+        $('#link_login').click()
       },
     );
   })
