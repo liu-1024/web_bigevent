@@ -13,7 +13,7 @@ $(function () {
       // 关闭询问框架
       layer.close(index);
     });
-
+  })
   })
 
 
@@ -28,10 +28,10 @@ $(function () {
       // },
       success: function (res) {
         // console.log(res)
-        if(res.status!==0) return layer.msg('获取用户信息失败！')
+        if(res.status!==0) return layui.layer.msg('获取用户信息失败！')
         // 渲染用户头像
         renderAvatar(res.data)
-      },
+      }
       // 必会执行的函数complete 响应数据中有res.responseJSON数据
       // complete: function (res) {
       //   console.log(res)
@@ -66,4 +66,4 @@ $(function () {
     }
   }
 
-})
+
